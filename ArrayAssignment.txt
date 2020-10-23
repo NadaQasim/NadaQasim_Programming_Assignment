@@ -1,0 +1,54 @@
+package Assignment;
+
+import java.util.Scanner;
+
+public class ArrayAssignment {
+
+   private static Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        System.out.print("Enter the number of letters your firstname : ");
+        int size= scan.nextInt();
+        char [] firstName = new char[size];
+
+        System.out.print("Enter the number of letters your firstname : ");
+        int size2= scan.nextInt();
+        char [] lastname = new char[size2];
+
+        fillName(firstName,lastname);
+        print(firstName,lastname);
+    }
+
+    private static void print(char[] name , char[] name2){
+
+        for(char Character : name){
+            System.out.print(Character);
+        }
+        System.out.print(" ");
+        for(char Character : name2){
+            System.out.print(Character);
+        }
+    }
+
+    private static void fillName(char[] name , char[] name2) {
+
+        int count = 0;
+        int counter = 0;
+        System.out.println("please enter your name letters separated by enter : ");
+
+        for(   ; count < name2.length ; count++){
+
+            for (  ; counter < name.length ; counter++){
+                char character = scan.next().charAt(0);
+                name[counter] = character;
+
+            }
+            if (count==0)
+                {System.out.println("enter you lastname letters separated by enter : ");}
+
+            char character = scan.next().charAt(0);
+            name2[count] = character;
+        }
+    }
+}
